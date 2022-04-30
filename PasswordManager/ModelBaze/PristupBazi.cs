@@ -32,5 +32,15 @@ namespace PasswordManager.ModelBaze
                 return a;
             }
         }
+
+        public void promjenaUnos(int KorisnikID,string Title, string Username, string Password, string URL, string Notes)
+        {
+            using IDbConnection connection = new SqlConnection("Server = 192.168.1.17; Database = BazaPodatakaPasswordManager; User Id = dorian; Password = lozinka;");
+            List<Mapa> mapaList = new List<Mapa>();
+            mapaList.Add(new Mapa {KorisnikID = KorisnikID ,Title = Title, Username = Username, Password = Password, URL = URL, Notes=Notes});
+            connection.Execute("dbo.PromjenaMapa @KorisnikID, @Title, @Username, @Password, @URL, @Notes",mapaList);
+
+
+        }
     }
 }

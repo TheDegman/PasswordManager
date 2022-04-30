@@ -61,5 +61,6 @@
   <ItemGroup>
     <Build Include="dbo\Korisnik.sql" />
     <Build Include="dbo\Mapa.sql" />
+    <Build Include="dbo\PromjenaMapa.sql" />
   </ItemGroup>
 </Project>

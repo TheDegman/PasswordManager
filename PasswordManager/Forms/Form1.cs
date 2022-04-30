@@ -73,10 +73,7 @@ namespace PasswordManager
 
         private void loginForm_Load(object sender, EventArgs e)
         {
-            if (ljudi.Count == 0)
-            {
-
-            }
+            
         }
     }
 }

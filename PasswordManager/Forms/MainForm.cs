@@ -16,7 +16,7 @@ namespace PasswordManager.Forms
         List<Mapa> mapa = new List<Mapa>();
         
         int index = 0;
-        int id = 0;
+        int user_id = 0;
 
         public MainForm()
         {
@@ -26,11 +26,11 @@ namespace PasswordManager.Forms
 
             dataGridView1.DataSource = mapa;
 
-            id = loginForm.UserID;
+            user_id = loginForm.UserID;
 
-            mapa.RemoveAll(x => x.KorisnikID != id);
+            mapa.RemoveAll(x => x.KorisnikID != user_id);
 
-            label7.Text=id.ToString();
+            label7.Text=user_id.ToString();
 
             dataGridView1.Columns["BazaID"].Visible = false;            
             dataGridView1.Columns["DateExpires"].Visible = false;
@@ -50,8 +50,9 @@ namespace PasswordManager.Forms
                 titleTB.Text = mapa[index].Title;
                 usernameTB.Text = mapa[index].Username;
                 passwordTB.Text = mapa[index].Password;
-                urlTB.Text = mapa[index].URL;
-                datecreatedLB.Text = mapa[index].DateCreated.ToString();
+                urlTB.Text = mapa[index].URL;                
+                label8.Text= mapa[index].DateCreated.ToString();
+                notesRTB.Text = mapa[index].Notes;
 
             }
             
@@ -89,6 +90,27 @@ namespace PasswordManager.Forms
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            PristupBazi db = new PristupBazi();
+            db.promjenaUnos(user_id, titleTB.Text, usernameTB.Text, passwordTB.Text, urlTB.Text,notesRTB.Text);
+
+            mapa = db.IspisPasswords();
+
+            dataGridView1.DataSource = mapa;
+
+            user_id = loginForm.UserID;
+
+            mapa.RemoveAll(x => x.KorisnikID != user_id);
+
+            label7.Text = user_id.ToString();
+
+            dataGridView1.Columns["BazaID"].Visible = false;
+            dataGridView1.Columns["DateExpires"].Visible = false;
+
+            titleTB.ReadOnly=true;
+            usernameTB.ReadOnly=true;
+            passwordTB.ReadOnly=true;
+            urlTB.ReadOnly=true;
+            notesRTB.ReadOnly=true;
 
         }
     }

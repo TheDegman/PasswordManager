@@ -34,7 +34,7 @@
             this.lockWorkspaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.datecreatedLB = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.saveBtn = new System.Windows.Forms.Button();
             this.notesRTB = new System.Windows.Forms.RichTextBox();
             this.urlTB = new System.Windows.Forms.TextBox();
@@ -48,7 +48,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -95,8 +95,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.datecreatedLB);
             this.panel1.Controls.Add(this.saveBtn);
             this.panel1.Controls.Add(this.notesRTB);
             this.panel1.Controls.Add(this.urlTB);
@@ -116,14 +116,14 @@
             this.panel1.Size = new System.Drawing.Size(1011, 435);
             this.panel1.TabIndex = 1;
             // 
-            // datecreatedLB
+            // label7
             // 
-            this.datecreatedLB.AutoSize = true;
-            this.datecreatedLB.Location = new System.Drawing.Point(737, 146);
-            this.datecreatedLB.Name = "datecreatedLB";
-            this.datecreatedLB.Size = new System.Drawing.Size(38, 15);
-            this.datecreatedLB.TabIndex = 14;
-            this.datecreatedLB.Text = "label7";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(804, 358);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 15);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "label7";
             // 
             // saveBtn
             // 
@@ -250,14 +250,14 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // label7
+            // label8
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(804, 358);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 15);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "label7";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(737, 146);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(38, 15);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "label8";
             // 
             // MainForm
             // 
@@ -291,7 +291,6 @@
         private Panel panel1;
         private DataGridView dataGridView1;
         private Label label1;
-        private Label datecreatedLB;
         private Button saveBtn;
         private RichTextBox notesRTB;
         private TextBox urlTB;
@@ -304,5 +303,6 @@
         private Label label3;
         private Label label2;
         private Label label7;
+        private Label label8;
     }
 }
