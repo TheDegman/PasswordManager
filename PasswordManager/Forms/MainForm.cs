@@ -16,17 +16,25 @@ namespace PasswordManager.Forms
         List<Mapa> mapa = new List<Mapa>();
         
         int index = 0;
+        int id = 0;
 
         public MainForm()
         {
             InitializeComponent();
             PristupBazi db = new PristupBazi();
             mapa = db.IspisPasswords();
+
             dataGridView1.DataSource = mapa;
-            dataGridView1.Columns["BazaID"].Visible = false;
-            
+
+            id = loginForm.UserID;
+
+            mapa.RemoveAll(x => x.KorisnikID != id);
+
+            label7.Text=id.ToString();
+
+            dataGridView1.Columns["BazaID"].Visible = false;            
             dataGridView1.Columns["DateExpires"].Visible = false;
-            dataGridView1.Columns["KorisnikID"].Visible = false;
+            
         }
 
         

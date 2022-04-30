@@ -32,6 +32,8 @@
             this.passwordTB = new System.Windows.Forms.TextBox();
             this.loginBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.usernameTB = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label2
@@ -70,11 +72,29 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(85, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 15);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Username";
+            // 
+            // usernameTB
+            // 
+            this.usernameTB.Location = new System.Drawing.Point(209, 50);
+            this.usernameTB.Name = "usernameTB";
+            this.usernameTB.Size = new System.Drawing.Size(121, 23);
+            this.usernameTB.TabIndex = 7;
+            // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(442, 218);
+            this.Controls.Add(this.usernameTB);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.passwordTB);
@@ -95,5 +115,7 @@
         private TextBox passwordTB;
         private Button loginBtn;
         private Button button2;
+        private Label label1;
+        private TextBox usernameTB;
     }
 }

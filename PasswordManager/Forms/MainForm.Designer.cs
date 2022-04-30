@@ -48,6 +48,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -94,6 +95,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.datecreatedLB);
             this.panel1.Controls.Add(this.saveBtn);
             this.panel1.Controls.Add(this.notesRTB);
@@ -248,6 +250,15 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(804, 358);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 15);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "label7";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -292,5 +303,6 @@
         private Label label4;
         private Label label3;
         private Label label2;
+        private Label label7;
     }
 }

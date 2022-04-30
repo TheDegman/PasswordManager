@@ -16,7 +16,7 @@ namespace PasswordManager
     public partial class loginForm : Form
     {
         List<Korisnik> ljudi = new List<Korisnik>();
-        int UserID=0;
+        public static int UserID=0;
         
         public loginForm()
         {
@@ -29,17 +29,19 @@ namespace PasswordManager
             PristupBazi db = new PristupBazi();
             ljudi = db.prijava();
 
-            //int resultEmail = ljudi.FindIndex(x => x.Username == usernameTB.Text);
+            int resultEmail = ljudi.FindIndex(x => x.Username == usernameTB.Text);
             int resultLozinka = ljudi.FindIndex(x => x.Password == passwordTB.Text);            
 
+            label1.Text = resultEmail.ToString();
+            label2.Text=resultLozinka.ToString();   
             
-            label2.Text=resultLozinka.ToString();            
-            UserID = ljudi[0].KorisnikID;
+            
 
             
 
-            if ((UserID==resultLozinka)&&(resultLozinka!=-1))
+            if ((resultEmail==resultLozinka && resultEmail!=-1)&&(resultLozinka==resultEmail && resultLozinka!=-1))
             {
+                UserID = ljudi[resultEmail].KorisnikID;
                 this.Hide();
                 MainForm glavna = new MainForm();
                 glavna.ShowDialog();
