@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Mapa] (
-    [BazaID]      INT           IDENTITY (1, 1) NOT NULL,
+    [BazaID]      INT           IDENTITY (0, 1) NOT NULL,
     [KorisnikID]  INT           NOT NULL,
     [Title]       VARCHAR (50)  NOT NULL,
     [Username]    VARCHAR (50)  NOT NULL,

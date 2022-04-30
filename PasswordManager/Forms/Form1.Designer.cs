@@ -28,22 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.usernameTB = new System.Windows.Forms.TextBox();
             this.passwordTB = new System.Windows.Forms.TextBox();
             this.loginBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(79, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Username";
             // 
             // label2
             // 
@@ -53,13 +42,6 @@
             this.label2.Size = new System.Drawing.Size(57, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
-            // 
-            // usernameTB
-            // 
-            this.usernameTB.Location = new System.Drawing.Point(209, 46);
-            this.usernameTB.Name = "usernameTB";
-            this.usernameTB.Size = new System.Drawing.Size(121, 23);
-            this.usernameTB.TabIndex = 2;
             // 
             // passwordTB
             // 
@@ -96,12 +78,11 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.passwordTB);
-            this.Controls.Add(this.usernameTB);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "loginForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.loginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,9 +91,7 @@
         #endregion
 
         private Button button1;
-        private Label label1;
         private Label label2;
-        private TextBox usernameTB;
         private TextBox passwordTB;
         private Button loginBtn;
         private Button button2;
