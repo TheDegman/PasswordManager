@@ -16,29 +16,45 @@ namespace PasswordManager
     public partial class loginForm : Form
     {
         List<Korisnik> ljudi = new List<Korisnik>();
+        public static int resultUsername = 0;
+        public static int resultPassword = 0;
+        public static string Username;
+        public static int KorisnikID;
         public loginForm()
         {
             InitializeComponent();
+            
            
         }
+        
 
-        private void button2_Click(object sender, EventArgs e)
+        public void button2_Click(object sender, EventArgs e)
         {
             PristupBazi db = new PristupBazi();
             ljudi = db.prijava();
 
-            int resultEmail = ljudi.FindIndex(x => x.Username == usernameTB.Text);
-            int resultLozinka = ljudi.FindIndex(x => x.Password == passwordTB.Text);            
+            resultUsername = ljudi.FindIndex(x => x.Username == usernameTB.Text);
+            resultPassword = ljudi.FindIndex(x => x.Password == passwordTB.Text);
 
-            label1.Text=resultEmail.ToString();
-            label2.Text=resultLozinka.ToString();
+            
 
-            if((resultEmail == resultLozinka) && (resultEmail != -1) && (resultLozinka != -1))
+            label1.Text = ljudi[resultUsername].Username;
+            label2.Text = ljudi[resultPassword].Password;
+            
+
+            
+
+            if((resultUsername == resultPassword) && (resultUsername != -1) && (resultPassword != -1))
             {
+                Username = usernameTB.Text;
+                KorisnikID = ljudi[resultUsername].KorisnikID;
+
+
                 this.Hide();
-                MainForm glavna = new MainForm();
+                mainForm glavna = new mainForm();
                 glavna.ShowDialog();
                 this.Close();
+                
 
 
 
@@ -60,7 +76,7 @@ namespace PasswordManager
         private void button2_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            MainForm glavna = new MainForm();
+            mainForm glavna = new mainForm();
             glavna.ShowDialog();
             this.Close();
 

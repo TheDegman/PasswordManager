@@ -1,6 +1,6 @@
 ﻿namespace PasswordManager.Forms
 {
-    partial class MainForm
+    partial class mainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,10 +32,17 @@
             this.korisnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lockWorkspaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.entryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyUsernameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uRLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.saveBTN = new System.Windows.Forms.Button();
             this.datecreatedLB = new System.Windows.Forms.Label();
-            this.saveBtn = new System.Windows.Forms.Button();
             this.notesRTB = new System.Windows.Forms.RichTextBox();
             this.urlTB = new System.Windows.Forms.TextBox();
             this.passwordTB = new System.Windows.Forms.TextBox();
@@ -57,6 +64,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.korisnikToolStripMenuItem,
+            this.entryToolStripMenuItem,
             this.toolsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -77,14 +85,72 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // lockWorkspaceToolStripMenuItem
             // 
             this.lockWorkspaceToolStripMenuItem.Name = "lockWorkspaceToolStripMenuItem";
-            this.lockWorkspaceToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.lockWorkspaceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.lockWorkspaceToolStripMenuItem.Text = "Lock Workspace";
+            this.lockWorkspaceToolStripMenuItem.Click += new System.EventHandler(this.lockWorkspaceToolStripMenuItem_Click);
+            // 
+            // entryToolStripMenuItem
+            // 
+            this.entryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copyUsernameToolStripMenuItem,
+            this.copyPasswordToolStripMenuItem,
+            this.uRLToolStripMenuItem,
+            this.addEntryToolStripMenuItem});
+            this.entryToolStripMenuItem.Name = "entryToolStripMenuItem";
+            this.entryToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.entryToolStripMenuItem.Text = "Entry";
+            // 
+            // copyUsernameToolStripMenuItem
+            // 
+            this.copyUsernameToolStripMenuItem.Name = "copyUsernameToolStripMenuItem";
+            this.copyUsernameToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
+            this.copyUsernameToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.copyUsernameToolStripMenuItem.Text = "Copy Username";
+            // 
+            // copyPasswordToolStripMenuItem
+            // 
+            this.copyPasswordToolStripMenuItem.Name = "copyPasswordToolStripMenuItem";
+            this.copyPasswordToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.copyPasswordToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.copyPasswordToolStripMenuItem.Text = "Copy Password";
+            // 
+            // uRLToolStripMenuItem
+            // 
+            this.uRLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem,
+            this.copyToolStripMenuItem});
+            this.uRLToolStripMenuItem.Name = "uRLToolStripMenuItem";
+            this.uRLToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.uRLToolStripMenuItem.Text = "URL";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.openToolStripMenuItem.Text = "Open";
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.U)));
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.copyToolStripMenuItem.Text = "Copy";
+            // 
+            // addEntryToolStripMenuItem
+            // 
+            this.addEntryToolStripMenuItem.Name = "addEntryToolStripMenuItem";
+            this.addEntryToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.addEntryToolStripMenuItem.Text = "Add Entry";
+            this.addEntryToolStripMenuItem.Click += new System.EventHandler(this.addEntryToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -94,8 +160,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.saveBTN);
             this.panel1.Controls.Add(this.datecreatedLB);
-            this.panel1.Controls.Add(this.saveBtn);
             this.panel1.Controls.Add(this.notesRTB);
             this.panel1.Controls.Add(this.urlTB);
             this.panel1.Controls.Add(this.passwordTB);
@@ -114,6 +180,16 @@
             this.panel1.Size = new System.Drawing.Size(1011, 435);
             this.panel1.TabIndex = 1;
             // 
+            // saveBTN
+            // 
+            this.saveBTN.Location = new System.Drawing.Point(783, 320);
+            this.saveBTN.Name = "saveBTN";
+            this.saveBTN.Size = new System.Drawing.Size(75, 23);
+            this.saveBTN.TabIndex = 15;
+            this.saveBTN.Text = "Save";
+            this.saveBTN.UseVisualStyleBackColor = true;
+            this.saveBTN.Click += new System.EventHandler(this.saveBTN_Click_1);
+            // 
             // datecreatedLB
             // 
             this.datecreatedLB.AutoSize = true;
@@ -123,21 +199,13 @@
             this.datecreatedLB.TabIndex = 14;
             this.datecreatedLB.Text = "label7";
             // 
-            // saveBtn
-            // 
-            this.saveBtn.Location = new System.Drawing.Point(789, 307);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
-            this.saveBtn.TabIndex = 13;
-            this.saveBtn.Text = "Save";
-            this.saveBtn.UseVisualStyleBackColor = true;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
-            // 
             // notesRTB
             // 
+            this.notesRTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.notesRTB.Location = new System.Drawing.Point(737, 176);
             this.notesRTB.Name = "notesRTB";
             this.notesRTB.ReadOnly = true;
+            this.notesRTB.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
             this.notesRTB.Size = new System.Drawing.Size(225, 96);
             this.notesRTB.TabIndex = 12;
             this.notesRTB.Text = "";
@@ -248,7 +316,7 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // MainForm
+            // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -257,9 +325,10 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "MainForm";
+            this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.mainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -281,7 +350,6 @@
         private DataGridView dataGridView1;
         private Label label1;
         private Label datecreatedLB;
-        private Button saveBtn;
         private RichTextBox notesRTB;
         private TextBox urlTB;
         private TextBox passwordTB;
@@ -292,5 +360,13 @@
         private Label label4;
         private Label label3;
         private Label label2;
+        private ToolStripMenuItem entryToolStripMenuItem;
+        private ToolStripMenuItem addEntryToolStripMenuItem;
+        private ToolStripMenuItem copyUsernameToolStripMenuItem;
+        private ToolStripMenuItem copyPasswordToolStripMenuItem;
+        private ToolStripMenuItem uRLToolStripMenuItem;
+        private ToolStripMenuItem openToolStripMenuItem;
+        private ToolStripMenuItem copyToolStripMenuItem;
+        private Button saveBTN;
     }
 }

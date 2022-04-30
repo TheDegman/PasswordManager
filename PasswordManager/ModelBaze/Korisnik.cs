@@ -10,6 +10,10 @@ namespace PasswordManager.ModelBaze
     {
         public int KorisnikID { get; set; }
         public string Username { get; set; }
+        public string UsernameIspis
+        {
+            get { return $"{Username}"; }
+        }
         public string Password { get; set; }
         public string Info
         {
