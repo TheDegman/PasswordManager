@@ -14,7 +14,8 @@ namespace PasswordManager.Forms
     public partial class MainForm : Form
     {
         List<Mapa> mapa = new List<Mapa>();
-        
+        List<Korisnik> ljudi = new List<Korisnik>();
+
         int index = 0;
         int user_id = 0;
 
@@ -31,6 +32,8 @@ namespace PasswordManager.Forms
             mapa.RemoveAll(x => x.KorisnikID != user_id);
 
             label7.Text=user_id.ToString();
+
+            korisnikToolStripMenuItem.Text = ljudi[user_id].Username;
 
             dataGridView1.Columns["BazaID"].Visible = false;            
             dataGridView1.Columns["DateExpires"].Visible = false;
