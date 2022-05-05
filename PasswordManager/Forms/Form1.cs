@@ -75,5 +75,13 @@ namespace PasswordManager
         {
             
         }
+
+        private void newBTN_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            registracijaForm glavna = new registracijaForm();
+            glavna.ShowDialog();
+            this.Close();
+        }
     }
 }

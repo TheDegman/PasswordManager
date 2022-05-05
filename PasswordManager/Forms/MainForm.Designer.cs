@@ -28,12 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.korisnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lockWorkspaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.entryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyUsernameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uRLsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.addEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.saveBtn = new System.Windows.Forms.Button();
             this.notesRTB = new System.Windows.Forms.RichTextBox();
@@ -48,16 +59,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.copyUserNameToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyPasswordToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.uRLsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.addEntryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteEntryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.korisnikToolStripMenuItem,
+            this.entryToolStripMenuItem,
             this.toolsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -80,12 +101,88 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // lockWorkspaceToolStripMenuItem
             // 
             this.lockWorkspaceToolStripMenuItem.Name = "lockWorkspaceToolStripMenuItem";
             this.lockWorkspaceToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.lockWorkspaceToolStripMenuItem.Text = "Lock Workspace";
+            this.lockWorkspaceToolStripMenuItem.Click += new System.EventHandler(this.lockWorkspaceToolStripMenuItem_Click);
+            // 
+            // entryToolStripMenuItem
+            // 
+            this.entryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copyUsernameToolStripMenuItem,
+            this.copyPasswordToolStripMenuItem,
+            this.uRLsToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.addEntryToolStripMenuItem,
+            this.deleteEntryToolStripMenuItem});
+            this.entryToolStripMenuItem.Name = "entryToolStripMenuItem";
+            this.entryToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.entryToolStripMenuItem.Text = "Entry";
+            // 
+            // copyUsernameToolStripMenuItem
+            // 
+            this.copyUsernameToolStripMenuItem.Name = "copyUsernameToolStripMenuItem";
+            this.copyUsernameToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
+            this.copyUsernameToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.copyUsernameToolStripMenuItem.Text = "Copy Username";
+            this.copyUsernameToolStripMenuItem.Click += new System.EventHandler(this.copyUsernameToolStripMenuItem_Click);
+            // 
+            // copyPasswordToolStripMenuItem
+            // 
+            this.copyPasswordToolStripMenuItem.Name = "copyPasswordToolStripMenuItem";
+            this.copyPasswordToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.copyPasswordToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.copyPasswordToolStripMenuItem.Text = "Copy Password";
+            this.copyPasswordToolStripMenuItem.Click += new System.EventHandler(this.copyPasswordToolStripMenuItem_Click);
+            // 
+            // uRLsToolStripMenuItem
+            // 
+            this.uRLsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem,
+            this.copyToolStripMenuItem});
+            this.uRLsToolStripMenuItem.Name = "uRLsToolStripMenuItem";
+            this.uRLsToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.uRLsToolStripMenuItem.Text = "URL(s)";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.U)));
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.copyToolStripMenuItem.Text = "Copy";
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(196, 6);
+            // 
+            // addEntryToolStripMenuItem
+            // 
+            this.addEntryToolStripMenuItem.Name = "addEntryToolStripMenuItem";
+            this.addEntryToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
+            this.addEntryToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.addEntryToolStripMenuItem.Text = "Add Entry";
+            // 
+            // deleteEntryToolStripMenuItem
+            // 
+            this.deleteEntryToolStripMenuItem.Name = "deleteEntryToolStripMenuItem";
+            this.deleteEntryToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.deleteEntryToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.deleteEntryToolStripMenuItem.Text = "Delete Entry";
             // 
             // toolsToolStripMenuItem
             // 
@@ -115,6 +212,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1011, 435);
             this.panel1.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(737, 146);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(38, 15);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "label8";
             // 
             // label7
             // 
@@ -249,15 +355,82 @@
             this.dataGridView1.Size = new System.Drawing.Size(644, 432);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
             // 
-            // label8
+            // contextMenuStrip1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(737, 146);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 15);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "label8";
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copyUserNameToolStripMenuItem1,
+            this.copyPasswordToolStripMenuItem1,
+            this.uRLsToolStripMenuItem1,
+            this.toolStripSeparator2,
+            this.addEntryToolStripMenuItem1,
+            this.deleteEntryToolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(205, 142);
+            // 
+            // copyUserNameToolStripMenuItem1
+            // 
+            this.copyUserNameToolStripMenuItem1.Name = "copyUserNameToolStripMenuItem1";
+            this.copyUserNameToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
+            this.copyUserNameToolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
+            this.copyUserNameToolStripMenuItem1.Text = "Copy User Name";
+            this.copyUserNameToolStripMenuItem1.Click += new System.EventHandler(this.copyUserNameToolStripMenuItem1_Click);
+            // 
+            // copyPasswordToolStripMenuItem1
+            // 
+            this.copyPasswordToolStripMenuItem1.Name = "copyPasswordToolStripMenuItem1";
+            this.copyPasswordToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.copyPasswordToolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
+            this.copyPasswordToolStripMenuItem1.Text = "Copy Password";
+            this.copyPasswordToolStripMenuItem1.Click += new System.EventHandler(this.copyPasswordToolStripMenuItem1_Click);
+            // 
+            // uRLsToolStripMenuItem1
+            // 
+            this.uRLsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem1,
+            this.copyToolStripMenuItem1});
+            this.uRLsToolStripMenuItem1.Name = "uRLsToolStripMenuItem1";
+            this.uRLsToolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
+            this.uRLsToolStripMenuItem1.Text = "URL(s)";
+            // 
+            // openToolStripMenuItem1
+            // 
+            this.openToolStripMenuItem1.Name = "openToolStripMenuItem1";
+            this.openToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
+            this.openToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem1.Text = "Open";
+            this.openToolStripMenuItem1.Click += new System.EventHandler(this.openToolStripMenuItem1_Click);
+            // 
+            // copyToolStripMenuItem1
+            // 
+            this.copyToolStripMenuItem1.Name = "copyToolStripMenuItem1";
+            this.copyToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.U)));
+            this.copyToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.copyToolStripMenuItem1.Text = "Copy";
+            this.copyToolStripMenuItem1.Click += new System.EventHandler(this.copyToolStripMenuItem1_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(201, 6);
+            // 
+            // addEntryToolStripMenuItem1
+            // 
+            this.addEntryToolStripMenuItem1.Name = "addEntryToolStripMenuItem1";
+            this.addEntryToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
+            this.addEntryToolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
+            this.addEntryToolStripMenuItem1.Text = "Add Entry...";
+            this.addEntryToolStripMenuItem1.Click += new System.EventHandler(this.addEntryToolStripMenuItem1_Click);
+            // 
+            // deleteEntryToolStripMenuItem1
+            // 
+            this.deleteEntryToolStripMenuItem1.Name = "deleteEntryToolStripMenuItem1";
+            this.deleteEntryToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.deleteEntryToolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
+            this.deleteEntryToolStripMenuItem1.Text = "Delete Entry";
+            this.deleteEntryToolStripMenuItem1.Click += new System.EventHandler(this.deleteEntryToolStripMenuItem1_Click);
             // 
             // MainForm
             // 
@@ -276,6 +449,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,5 +478,23 @@
         private Label label2;
         private Label label7;
         private Label label8;
+        private ToolStripMenuItem entryToolStripMenuItem;
+        private ToolStripMenuItem copyUsernameToolStripMenuItem;
+        private ToolStripMenuItem copyPasswordToolStripMenuItem;
+        private ToolStripMenuItem uRLsToolStripMenuItem;
+        private ToolStripMenuItem openToolStripMenuItem;
+        private ToolStripMenuItem copyToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem addEntryToolStripMenuItem;
+        private ToolStripMenuItem deleteEntryToolStripMenuItem;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem copyUserNameToolStripMenuItem1;
+        private ToolStripMenuItem copyPasswordToolStripMenuItem1;
+        private ToolStripMenuItem uRLsToolStripMenuItem1;
+        private ToolStripMenuItem openToolStripMenuItem1;
+        private ToolStripMenuItem copyToolStripMenuItem1;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripMenuItem addEntryToolStripMenuItem1;
+        private ToolStripMenuItem deleteEntryToolStripMenuItem1;
     }
 }

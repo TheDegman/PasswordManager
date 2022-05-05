@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,16 +26,24 @@ namespace PasswordManager.Forms
             InitializeComponent();
             PristupBazi db = new PristupBazi();
             mapa = db.IspisPasswords();
-
             dataGridView1.DataSource = mapa;
 
             user_id = loginForm.UserID;
-
             mapa.RemoveAll(x => x.KorisnikID != user_id);
+            label7.Text = user_id.ToString();
 
-            label7.Text=user_id.ToString();
 
-            korisnikToolStripMenuItem.Text = ljudi[user_id].Username;
+            ljudi =db.IspisUsers();            
+            
+
+            if (user_id >= 0)
+            {
+                
+                korisnikToolStripMenuItem.Text = ljudi[user_id].Username;
+
+            }
+
+            
 
             dataGridView1.Columns["BazaID"].Visible = false;            
             dataGridView1.Columns["DateExpires"].Visible = false;
@@ -93,27 +103,165 @@ namespace PasswordManager.Forms
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            PristupBazi db = new PristupBazi();
-            db.promjenaUnos(user_id, titleTB.Text, usernameTB.Text, passwordTB.Text, urlTB.Text,notesRTB.Text);
+            
+                string message = "Krivi email ili lozinka";
+                string title = "Greška";
 
-            mapa = db.IspisPasswords();
+            
+                PristupBazi db = new PristupBazi();
+                db.promjenaUnos(user_id, titleTB.Text, usernameTB.Text, passwordTB.Text, urlTB.Text, notesRTB.Text);
 
-            dataGridView1.DataSource = mapa;
+                mapa = db.IspisPasswords();
 
-            user_id = loginForm.UserID;
+                dataGridView1.DataSource = mapa;
 
-            mapa.RemoveAll(x => x.KorisnikID != user_id);
+                user_id = loginForm.UserID;
 
-            label7.Text = user_id.ToString();
+                mapa.RemoveAll(x => x.KorisnikID != user_id);
 
-            dataGridView1.Columns["BazaID"].Visible = false;
-            dataGridView1.Columns["DateExpires"].Visible = false;
+                label7.Text = user_id.ToString();
 
-            titleTB.ReadOnly=true;
-            usernameTB.ReadOnly=true;
-            passwordTB.ReadOnly=true;
-            urlTB.ReadOnly=true;
-            notesRTB.ReadOnly=true;
+                dataGridView1.Columns["BazaID"].Visible = false;
+                dataGridView1.Columns["DateExpires"].Visible = false;
+
+                titleTB.ReadOnly = true;
+                usernameTB.ReadOnly = true;
+                passwordTB.ReadOnly = true;
+                urlTB.ReadOnly = true;
+                notesRTB.ReadOnly = true;
+
+            
+            
+
+        }
+
+        
+
+        private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex != -1 && e.ColumnIndex != -1)
+            {
+                if (e.Button == MouseButtons.Right)
+                {
+                    DataGridViewCell clickedCell = (sender as DataGridView).Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+                    // Here you can do whatever you want with the cell
+                    this.dataGridView1.CurrentCell = clickedCell;  // Select the clicked cell, for instance
+
+                    // Get mouse position relative to the vehicles grid
+                    var relativeMousePosition = dataGridView1.PointToClient(Cursor.Position);
+
+                    // Show the context menu
+                    this.contextMenuStrip1.Show(dataGridView1, relativeMousePosition);
+                }
+            }
+        }
+
+
+
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void lockWorkspaceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            loginForm glavna = new loginForm();
+            glavna.ShowDialog();
+            this.Close();
+        }
+
+        private void copyUsernameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (usernameTB.Text != "")
+            {
+                Clipboard.SetText(usernameTB.Text);
+
+            }
+
+
+        }
+
+        private void copyPasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (passwordTB.Text != "")
+            {
+                Clipboard.SetText(passwordTB.Text);
+
+            }
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (urlTB.Text != "")
+            {
+                Clipboard.SetText(urlTB.Text);
+
+            }
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+
+            if (urlTB.Text != "")
+            {
+                ProcessStartInfo psInfo = new ProcessStartInfo
+                {
+                    FileName = urlTB.Text,
+                    UseShellExecute = true
+                };
+                Process.Start(psInfo);
+
+            }
+
+
+        }
+
+        private void copyUserNameToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (usernameTB.Text != "")
+            {
+                Clipboard.SetText(usernameTB.Text);
+
+            }
+        }
+
+        private void copyPasswordToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (passwordTB.Text != "")
+            {
+                Clipboard.SetText(passwordTB.Text);
+
+            }
+
+        }
+
+        private void openToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void copyToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (urlTB.Text != "")
+            {
+                Clipboard.SetText(urlTB.Text);
+
+            }
+
+        }
+
+        private void addEntryToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteEntryToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
 
         }
     }

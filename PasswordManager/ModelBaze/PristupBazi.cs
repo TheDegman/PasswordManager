@@ -33,6 +33,17 @@ namespace PasswordManager.ModelBaze
             }
         }
 
+        public List<Korisnik> IspisUsers()
+        {
+            using (IDbConnection connection = new SqlConnection("Server = 192.168.1.17; Database = BazaPodatakaPasswordManager; User Id = dorian; Password = lozinka;"))
+            {
+
+                var a = connection.Query<Korisnik>("SELECT * FROM BazaPodatakaPasswordManager.dbo.Korisnik").ToList();
+
+                return a;
+            }
+        }
+
         public void promjenaUnos(int KorisnikID,string Title, string Username, string Password, string URL, string Notes)
         {
             using IDbConnection connection = new SqlConnection("Server = 192.168.1.17; Database = BazaPodatakaPasswordManager; User Id = dorian; Password = lozinka;");
@@ -40,6 +51,16 @@ namespace PasswordManager.ModelBaze
             mapaList.Add(new Mapa {KorisnikID = KorisnikID ,Title = Title, Username = Username, Password = Password, URL = URL, Notes=Notes});
             connection.Execute("dbo.PromjenaMapa @KorisnikID, @Title, @Username, @Password, @URL, @Notes",mapaList);
 
+
+        }
+
+        //unos novi korisnik
+        public void unosNoviUser(string Username, string Password)
+        {
+            using IDbConnection connection = new SqlConnection("Server = 192.168.1.17; Database = BazaPodatakaPasswordManager; User Id = dorian; Password = lozinka;");
+            List<Korisnik> user = new List<Korisnik>();
+            user.Add(new Korisnik { Username = Username, Password = Password });
+            connection.Execute("dbo.UnosNoviUser @Username, @Password",user);
 
         }
     }

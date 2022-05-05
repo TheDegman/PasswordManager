@@ -34,6 +34,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.usernameTB = new System.Windows.Forms.TextBox();
+            this.newBTN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -88,11 +89,22 @@
             this.usernameTB.Size = new System.Drawing.Size(121, 23);
             this.usernameTB.TabIndex = 7;
             // 
+            // newBTN
+            // 
+            this.newBTN.Location = new System.Drawing.Point(63, 147);
+            this.newBTN.Name = "newBTN";
+            this.newBTN.Size = new System.Drawing.Size(109, 23);
+            this.newBTN.TabIndex = 8;
+            this.newBTN.Text = "Create User";
+            this.newBTN.UseVisualStyleBackColor = true;
+            this.newBTN.Click += new System.EventHandler(this.newBTN_Click);
+            // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(442, 218);
+            this.Controls.Add(this.newBTN);
             this.Controls.Add(this.usernameTB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
@@ -117,5 +129,6 @@
         private Button button2;
         private Label label1;
         private TextBox usernameTB;
+        private Button newBTN;
     }
 }
