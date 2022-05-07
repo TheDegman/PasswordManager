@@ -21,6 +21,7 @@ namespace PasswordManager
         public loginForm()
         {
             InitializeComponent();
+            
            
         }
 
@@ -83,5 +84,7 @@ namespace PasswordManager
             glavna.ShowDialog();
             this.Close();
         }
+
+        
     }
 }

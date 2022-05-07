@@ -63,5 +63,6 @@
     <Build Include="dbo\Mapa.sql" />
     <Build Include="dbo\PromjenaMapa.sql" />
     <Build Include="dbo\UnosNoviUser.sql" />
+    <Build Include="dbo\UnosNoviMapa.sql" />
   </ItemGroup>
 </Project>

@@ -2,9 +2,9 @@
 	@KorisnikID int,
 	@Title varchar(50),
 	@Username varchar(50),
-	@Password varchar(50),
-	@URL varchar(50),
-	@Notes varchar(50)
+	@Password VARCHAR (MAX),
+	@URL VARCHAR (MAX),
+	@Notes VARCHAR (MAX)
 	
 AS
 begin

@@ -19,7 +19,7 @@ namespace PasswordManager.Forms
         List<Korisnik> ljudi = new List<Korisnik>();
 
         int index = 0;
-        int user_id = 0;
+        public static int user_id = 0;
 
         public MainForm()
         {
@@ -50,9 +50,9 @@ namespace PasswordManager.Forms
             
         }
 
-        
 
-        
+
+
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -257,6 +257,11 @@ namespace PasswordManager.Forms
 
         private void addEntryToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            AddEntryForm glavna = new AddEntryForm();
+            glavna.ShowDialog();
+            this.Close();
+
 
         }
 
@@ -264,5 +269,18 @@ namespace PasswordManager.Forms
         {
 
         }
+
+        
+
+        private void addEntryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddEntryForm glavna = new AddEntryForm();
+            glavna.ShowDialog();
+            this.Close();
+
+        }
+
+        
     }
 }
