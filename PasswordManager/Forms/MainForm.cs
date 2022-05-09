@@ -12,28 +12,43 @@ namespace PasswordManager.Forms
         public static int user_id = 0;
         public static int mapa_id = 0;
 
+        int korisnikID = 0;
+        int bazaID = 0;
+
         public MainForm()
         {
             InitializeComponent();
+
             PristupBazi db = new PristupBazi();
             mapa = db.IspisPasswords();
-            dataGridView1.DataSource = mapa;
 
-            if(loginForm.UserID != -1)
+            if(mapa.Count == 0)
             {
-                user_id = loginForm.UserID;
-                mapa_id = mapa[user_id].BazaID;
+                saveBtn.Enabled = false;
+
             }
             else
             {
-                user_id = AddEntryForm.user_id;
-                mapa_id = mapa[user_id].BazaID;
+                if (loginForm.UserID != -1)
+                {
+                    user_id = loginForm.UserID;
+                    mapa_id = mapa[user_id].BazaID;
+                }
+                else
+                {
+                    user_id = AddEntryForm.user_id;
+                    mapa_id = mapa[user_id].BazaID;
+                }
             }
+            
+
+            
 
 
            
             label7.Text = user_id.ToString();
             mapa.RemoveAll(x => x.KorisnikID != user_id);
+            dataGridView1.DataSource = mapa;
 
 
 
@@ -70,7 +85,10 @@ namespace PasswordManager.Forms
                 urlTB.Text = mapa[index].URL;
                 label8.Text = mapa[index].DateCreated.ToString();
                 notesRTB.Text = mapa[index].Notes;
-
+                korisnikID = mapa[index].KorisnikID;
+                bazaID = mapa[index].BazaID;
+                label9.Text=korisnikID.ToString();
+                label10.Text=bazaID.ToString();
             }
 
 
@@ -283,6 +301,30 @@ namespace PasswordManager.Forms
 
         private void deleteEntryToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            PristupBazi db = new PristupBazi();
+            db.deleteMapa(bazaID,korisnikID);
+
+            if (loginForm.UserID != -1)
+            {
+                user_id = loginForm.UserID;
+                mapa_id = mapa[user_id].BazaID;
+            }
+            else
+            {
+                user_id = AddEntryForm.user_id;
+                mapa_id = mapa[user_id].BazaID;
+            }
+
+
+            mapa = db.IspisPasswords();
+            dataGridView1.DataSource = mapa;
+
+
+            mapa.RemoveAll(x => x.KorisnikID != user_id);
+
+            label7.Text = user_id.ToString();
+
+
 
         }
 

@@ -73,5 +73,14 @@ namespace PasswordManager.ModelBaze
             connection.Execute("dbo.UnosNoviMapa @KorisnikID, @Title, @Username, @Password, @URL, @Notes, @DateCreated", polje);
 
         }
+
+        public void deleteMapa(int BazaID, int KorisnikID)
+        {
+            using IDbConnection connection = new SqlConnection("Server = 192.168.1.17; Database = BazaPodatakaPasswordManager; User Id = dorian; Password = lozinka;");
+            List<delete> polje = new List<delete>();
+            polje.Add(new delete { BazaID=BazaID, KorisnikID=KorisnikID });
+            connection.Execute("dbo.deleteMapa @BazaID, @KorisnikID", polje);
+
+        }
     }
 }
