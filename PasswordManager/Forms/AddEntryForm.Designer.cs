@@ -49,13 +49,12 @@
             this.revealBTN = new System.Windows.Forms.Button();
             this.passwordsBTN = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.hexKey40BitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hexKey40BitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.hexKey40BitToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.randomMACAddressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.openPasswordGeneratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -225,58 +224,50 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openPasswordGeneratorToolStripMenuItem,
             this.toolStripSeparator1,
             this.hexKey40BitToolStripMenuItem,
             this.hexKey40BitToolStripMenuItem1,
             this.hexKey40BitToolStripMenuItem2,
             this.randomMACAddressToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(221, 142);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(195, 120);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(191, 6);
             // 
             // hexKey40BitToolStripMenuItem
             // 
             this.hexKey40BitToolStripMenuItem.Name = "hexKey40BitToolStripMenuItem";
-            this.hexKey40BitToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.hexKey40BitToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.hexKey40BitToolStripMenuItem.Text = "Hex Key - 40-Bit";
             this.hexKey40BitToolStripMenuItem.Click += new System.EventHandler(this.hexKey40BitToolStripMenuItem_Click);
             // 
             // hexKey40BitToolStripMenuItem1
             // 
             this.hexKey40BitToolStripMenuItem1.Name = "hexKey40BitToolStripMenuItem1";
-            this.hexKey40BitToolStripMenuItem1.Size = new System.Drawing.Size(220, 22);
+            this.hexKey40BitToolStripMenuItem1.Size = new System.Drawing.Size(194, 22);
             this.hexKey40BitToolStripMenuItem1.Text = "Hex Key - 128-Bit";
             this.hexKey40BitToolStripMenuItem1.Click += new System.EventHandler(this.hexKey40BitToolStripMenuItem1_Click);
             // 
             // hexKey40BitToolStripMenuItem2
             // 
             this.hexKey40BitToolStripMenuItem2.Name = "hexKey40BitToolStripMenuItem2";
-            this.hexKey40BitToolStripMenuItem2.Size = new System.Drawing.Size(220, 22);
+            this.hexKey40BitToolStripMenuItem2.Size = new System.Drawing.Size(194, 22);
             this.hexKey40BitToolStripMenuItem2.Text = "Hex Key - 256-Bit";
             this.hexKey40BitToolStripMenuItem2.Click += new System.EventHandler(this.hexKey40BitToolStripMenuItem2_Click);
             // 
             // randomMACAddressToolStripMenuItem
             // 
             this.randomMACAddressToolStripMenuItem.Name = "randomMACAddressToolStripMenuItem";
-            this.randomMACAddressToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.randomMACAddressToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.randomMACAddressToolStripMenuItem.Text = "Random MAC Address";
             this.randomMACAddressToolStripMenuItem.Click += new System.EventHandler(this.randomMACAddressToolStripMenuItem_Click);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(217, 6);
-            // 
-            // openPasswordGeneratorToolStripMenuItem
-            // 
-            this.openPasswordGeneratorToolStripMenuItem.Name = "openPasswordGeneratorToolStripMenuItem";
-            this.openPasswordGeneratorToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.openPasswordGeneratorToolStripMenuItem.Text = "Open Password Generator...";
-            this.openPasswordGeneratorToolStripMenuItem.Click += new System.EventHandler(this.openPasswordGeneratorToolStripMenuItem_Click);
             // 
             // AddEntryForm
             // 
@@ -341,7 +332,6 @@
         private ToolStripMenuItem hexKey40BitToolStripMenuItem2;
         private ToolStripMenuItem randomMACAddressToolStripMenuItem;
         private ErrorProvider errorProvider1;
-        private ToolStripMenuItem openPasswordGeneratorToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator1;
     }
 }

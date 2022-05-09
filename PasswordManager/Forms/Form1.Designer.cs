@@ -31,7 +31,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.passwordTB = new System.Windows.Forms.TextBox();
             this.loginBtn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.usernameTB = new System.Windows.Forms.TextBox();
             this.newBTN = new System.Windows.Forms.Button();
@@ -61,17 +60,7 @@
             this.loginBtn.TabIndex = 4;
             this.loginBtn.Text = "Login";
             this.loginBtn.UseVisualStyleBackColor = true;
-            this.loginBtn.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(342, 148);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // label1
             // 
@@ -108,14 +97,12 @@
             this.Controls.Add(this.newBTN);
             this.Controls.Add(this.usernameTB);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.passwordTB);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "loginForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.loginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,7 +114,6 @@
         private Label label2;
         private TextBox passwordTB;
         private Button loginBtn;
-        private Button button2;
         private Label label1;
         private TextBox usernameTB;
         private Button newBTN;

@@ -1,15 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using PasswordManager.ModelBaze;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using PasswordManager.ModelBaze;
 
 namespace PasswordManager.Forms
 {
@@ -20,6 +10,7 @@ namespace PasswordManager.Forms
 
         int index = 0;
         public static int user_id = 0;
+        public static int mapa_id = 0;
 
         public MainForm()
         {
@@ -28,26 +19,39 @@ namespace PasswordManager.Forms
             mapa = db.IspisPasswords();
             dataGridView1.DataSource = mapa;
 
-            user_id = loginForm.UserID;
-            mapa.RemoveAll(x => x.KorisnikID != user_id);
-            label7.Text = user_id.ToString();
-
-
-            ljudi =db.IspisUsers();            
-            
-
-            if (user_id >= 0)
+            if(loginForm.UserID != -1)
             {
-                
+                user_id = loginForm.UserID;
+                mapa_id = mapa[user_id].BazaID;
+            }
+            else
+            {
+                user_id = AddEntryForm.user_id;
+                mapa_id = mapa[user_id].BazaID;
+            }
+
+
+           
+            label7.Text = user_id.ToString();
+            mapa.RemoveAll(x => x.KorisnikID != user_id);
+
+
+
+            ljudi = db.IspisUsers();
+
+
+            if (user_id != -1)
+            {
+
                 korisnikToolStripMenuItem.Text = ljudi[user_id].Username;
 
             }
 
-            
 
-            dataGridView1.Columns["BazaID"].Visible = false;            
-            dataGridView1.Columns["DateExpires"].Visible = false;
-            
+
+            dataGridView1.Columns["BazaID"].Visible = false;
+
+
         }
 
 
@@ -63,12 +67,12 @@ namespace PasswordManager.Forms
                 titleTB.Text = mapa[index].Title;
                 usernameTB.Text = mapa[index].Username;
                 passwordTB.Text = mapa[index].Password;
-                urlTB.Text = mapa[index].URL;                
-                label8.Text= mapa[index].DateCreated.ToString();
+                urlTB.Text = mapa[index].URL;
+                label8.Text = mapa[index].DateCreated.ToString();
                 notesRTB.Text = mapa[index].Notes;
 
             }
-            
+
 
         }
 
@@ -103,39 +107,51 @@ namespace PasswordManager.Forms
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            
-                string message = "Krivi email ili lozinka";
-                string title = "Greška";
 
-            
-                PristupBazi db = new PristupBazi();
-                db.promjenaUnos(user_id, titleTB.Text, usernameTB.Text, passwordTB.Text, urlTB.Text, notesRTB.Text);
 
-                mapa = db.IspisPasswords();
+            string message = "Krivi email ili lozinka";
+            string title = "Greška";
 
-                dataGridView1.DataSource = mapa;
-
+            if (loginForm.UserID != -1)
+            {
                 user_id = loginForm.UserID;
+                mapa_id = mapa[user_id].BazaID;
+            }
+            else
+            {
+                user_id = AddEntryForm.user_id;
+                mapa_id = mapa[user_id].BazaID;
+            }
 
-                mapa.RemoveAll(x => x.KorisnikID != user_id);
 
-                label7.Text = user_id.ToString();
+            PristupBazi db = new PristupBazi();
+            db.promjenaUnos(mapa_id, user_id, titleTB.Text, usernameTB.Text, passwordTB.Text, urlTB.Text, notesRTB.Text);
 
-                dataGridView1.Columns["BazaID"].Visible = false;
-                dataGridView1.Columns["DateExpires"].Visible = false;
+            mapa = db.IspisPasswords();
+            dataGridView1.DataSource = mapa;
 
-                titleTB.ReadOnly = true;
-                usernameTB.ReadOnly = true;
-                passwordTB.ReadOnly = true;
-                urlTB.ReadOnly = true;
-                notesRTB.ReadOnly = true;
 
+
+
+            mapa.RemoveAll(x => x.KorisnikID != user_id);
+
+            label7.Text = user_id.ToString();
+
+            dataGridView1.Columns["BazaID"].Visible = false;
             
-            
+
+            titleTB.ReadOnly = true;
+            usernameTB.ReadOnly = true;
+            passwordTB.ReadOnly = true;
+            urlTB.ReadOnly = true;
+            notesRTB.ReadOnly = true;
+
+
+
 
         }
 
-        
+
 
         private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -204,7 +220,7 @@ namespace PasswordManager.Forms
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
 
             if (urlTB.Text != "")
             {
@@ -241,7 +257,7 @@ namespace PasswordManager.Forms
 
         private void openToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-           
+
 
         }
 
@@ -270,7 +286,7 @@ namespace PasswordManager.Forms
 
         }
 
-        
+
 
         private void addEntryToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -281,6 +297,6 @@ namespace PasswordManager.Forms
 
         }
 
-        
+
     }
 }

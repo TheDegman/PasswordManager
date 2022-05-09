@@ -16,9 +16,9 @@ namespace PasswordManager.Forms
 
     public partial class AddEntryForm : Form
     {
-
-        /// Password generators
         
+        /// Password generators
+
         public string GenerateToken(int length)
         {
             using (RNGCryptoServiceProvider cryptRNG = new RNGCryptoServiceProvider())
@@ -53,13 +53,16 @@ namespace PasswordManager.Forms
         ///
 
 
-        int user_id = 0;
+        public static int user_id = 0;
+        public static int mapa_id = 0;
+
 
 
         public AddEntryForm()
         {
             InitializeComponent();
             user_id=MainForm.user_id;
+            mapa_id=MainForm.mapa_id;
         }
 
         private void okBTN_Click(object sender, EventArgs e)

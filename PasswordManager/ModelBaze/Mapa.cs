@@ -16,6 +16,8 @@ namespace PasswordManager.ModelBaze
         public string URL { get; set; }
         public string Notes { get; set; }
         public DateTime DateCreated { get; set; }
-        public DateTime DateExpires { get; set; }
+        
+
+
     }
 }

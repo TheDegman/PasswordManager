@@ -1,4 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[PromjenaMapa]
+	@BazaID int,
 	@KorisnikID int,
 	@Title varchar(50),
 	@Username varchar(50),
@@ -8,6 +9,7 @@
 	
 AS
 begin
+	SET ROWCOUNT 1
 	update Mapa
 	set 
 		Title=@Title,
@@ -17,7 +19,9 @@ begin
 		Notes=@Notes
 		
 	where
-		KorisnikID=@KorisnikID;
+		KorisnikID=@KorisnikID And BazaID=@BazaID;
+		--napraviti još duplo varijabli jedne za provjeru, druge za novi upis/promjenu
+		
 
 end		
 	 

@@ -7,7 +7,6 @@
     [URL]         VARCHAR (MAX)  NOT NULL,
     [Notes]       VARCHAR (MAX) NOT NULL,
     [DateCreated] DATETIME      NOT NULL,
-    [DateExpires] DATETIME      NOT NULL,
     CONSTRAINT [PK_Baza] PRIMARY KEY CLUSTERED ([BazaID] ASC),
     CONSTRAINT [FK_Baza_Korisnik] FOREIGN KEY ([KorisnikID]) REFERENCES [dbo].[Korisnik] ([KorisnikID])
 );

@@ -44,12 +44,12 @@ namespace PasswordManager.ModelBaze
             }
         }
 
-        public void promjenaUnos(int KorisnikID,string Title, string Username, string Password, string URL, string Notes)
+        public void promjenaUnos(int BazaID, int KorisnikID,string Title, string Username, string Password, string URL, string Notes)
         {
             using IDbConnection connection = new SqlConnection("Server = 192.168.1.17; Database = BazaPodatakaPasswordManager; User Id = dorian; Password = lozinka;");
             List<Mapa> mapaList = new List<Mapa>();
-            mapaList.Add(new Mapa {KorisnikID = KorisnikID ,Title = Title, Username = Username, Password = Password, URL = URL, Notes=Notes});
-            connection.Execute("dbo.PromjenaMapa @KorisnikID, @Title, @Username, @Password, @URL, @Notes",mapaList);
+            mapaList.Add(new Mapa { BazaID=BazaID, KorisnikID = KorisnikID ,Title = Title, Username = Username, Password = Password, URL = URL, Notes=Notes});
+            connection.Execute("dbo.PromjenaMapa @BazaID ,@KorisnikID, @Title, @Username, @Password, @URL, @Notes",mapaList);
 
 
         }
@@ -69,8 +69,8 @@ namespace PasswordManager.ModelBaze
         {
             using IDbConnection connection = new SqlConnection("Server = 192.168.1.17; Database = BazaPodatakaPasswordManager; User Id = dorian; Password = lozinka;");
             List<Mapa> polje = new List<Mapa>();
-            polje.Add(new Mapa { KorisnikID=KorisnikID, Title=Title,Username=Username,Password=Password,URL=URL,Notes=Notes,DateCreated=DateTime.Now, DateExpires=DateTime.Now});
-            connection.Execute("dbo.UnosNoviMapa @KorisnikID, @Title, @Username, @Password, @URL, @Notes, @DateCreated, @DateExpires", polje);
+            polje.Add(new Mapa {KorisnikID=KorisnikID, Title=Title,Username=Username,Password=Password,URL=URL,Notes=Notes,DateCreated=DateTime.Now});
+            connection.Execute("dbo.UnosNoviMapa @KorisnikID, @Title, @Username, @Password, @URL, @Notes, @DateCreated", polje);
 
         }
     }

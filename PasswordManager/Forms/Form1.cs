@@ -25,27 +25,27 @@ namespace PasswordManager
            
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void loginBtn_Click(object sender, EventArgs e)
         {
             PristupBazi db = new PristupBazi();
             ljudi = db.prijava();
 
             int resultEmail = ljudi.FindIndex(x => x.Username == usernameTB.Text);
-            int resultLozinka = ljudi.FindIndex(x => x.Password == passwordTB.Text);            
+            int resultLozinka = ljudi.FindIndex(x => x.Password == passwordTB.Text);
 
             label1.Text = resultEmail.ToString();
-            label2.Text=resultLozinka.ToString();   
-            
-            
+            label2.Text = resultLozinka.ToString();
 
-            
 
-            if ((resultEmail==resultLozinka && resultEmail!=-1)&&(resultLozinka==resultEmail && resultLozinka!=-1))
+
+
+
+            if ((resultEmail == resultLozinka && resultEmail != -1) && (resultLozinka == resultEmail && resultLozinka != -1))
             {
                 UserID = ljudi[resultEmail].KorisnikID;
                 this.Hide();
-                MainForm glavna = new MainForm();
-                glavna.ShowDialog();
+                MainForm forma = new MainForm();
+                forma.ShowDialog();
                 this.Close();
 
             }
@@ -57,25 +57,9 @@ namespace PasswordManager
                 MessageBox.Show(message, title);
 
             }
-
-
-
-
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            this.Hide();
-            MainForm glavna = new MainForm();
-            glavna.ShowDialog();
-            this.Close();
-
-        }
-
-        private void loginForm_Load(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void newBTN_Click(object sender, EventArgs e)
         {
