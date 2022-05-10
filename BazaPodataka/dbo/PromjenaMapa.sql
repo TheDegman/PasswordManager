@@ -20,7 +20,7 @@ begin
 		
 	where
 		KorisnikID=@KorisnikID And BazaID=@BazaID;
-		--napraviti još duplo varijabli jedne za provjeru, druge za novi upis/promjenu
+		
 		
 
 end		

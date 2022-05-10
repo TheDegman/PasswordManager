@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(loginForm));
             this.label2 = new System.Windows.Forms.Label();
             this.passwordTB = new System.Windows.Forms.TextBox();
             this.loginBtn = new System.Windows.Forms.Button();
@@ -54,11 +55,11 @@
             // 
             // loginBtn
             // 
-            this.loginBtn.Location = new System.Drawing.Point(201, 147);
+            this.loginBtn.Location = new System.Drawing.Point(164, 141);
             this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(75, 23);
+            this.loginBtn.Size = new System.Drawing.Size(109, 23);
             this.loginBtn.TabIndex = 4;
-            this.loginBtn.Text = "Login";
+            this.loginBtn.Text = "OK";
             this.loginBtn.UseVisualStyleBackColor = true;
             this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
@@ -80,7 +81,7 @@
             // 
             // newBTN
             // 
-            this.newBTN.Location = new System.Drawing.Point(63, 147);
+            this.newBTN.Location = new System.Drawing.Point(164, 170);
             this.newBTN.Name = "newBTN";
             this.newBTN.Size = new System.Drawing.Size(109, 23);
             this.newBTN.TabIndex = 8;
@@ -101,8 +102,9 @@
             this.Controls.Add(this.passwordTB);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "loginForm";
-            this.Text = "Form1";
+            this.Text = "Password Manager";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,14 +1,5 @@
-using PasswordManager.ModelBaze;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using PasswordManager.Forms;
+using PasswordManager.ModelBaze;
 
 
 namespace PasswordManager
@@ -16,13 +7,11 @@ namespace PasswordManager
     public partial class loginForm : Form
     {
         List<Korisnik> ljudi = new List<Korisnik>();
-        public static int UserID=0;
-        
+        public static int UserID = 0;
+
         public loginForm()
         {
             InitializeComponent();
-            
-           
         }
 
         private void loginBtn_Click(object sender, EventArgs e)
@@ -30,19 +19,16 @@ namespace PasswordManager
             PristupBazi db = new PristupBazi();
             ljudi = db.prijava();
 
-            int resultEmail = ljudi.FindIndex(x => x.Username == usernameTB.Text);
+            int resultUsername = ljudi.FindIndex(x => x.Username == usernameTB.Text);
             int resultLozinka = ljudi.FindIndex(x => x.Password == passwordTB.Text);
 
-            label1.Text = resultEmail.ToString();
+            label1.Text = resultUsername.ToString();
             label2.Text = resultLozinka.ToString();
 
 
-
-
-
-            if ((resultEmail == resultLozinka && resultEmail != -1) && (resultLozinka == resultEmail && resultLozinka != -1))
+            if ((resultUsername == resultLozinka && resultUsername >= 0) && (resultLozinka == resultUsername && resultLozinka >= 0))
             {
-                UserID = ljudi[resultEmail].KorisnikID;
+                UserID = ljudi[resultLozinka].KorisnikID;
                 this.Hide();
                 MainForm forma = new MainForm();
                 forma.ShowDialog();
@@ -51,15 +37,13 @@ namespace PasswordManager
             }
             else
             {
-                string message = "Krivi email ili lozinka";
-                string title = "Greška";
+                string message = "Wrong username or password";
+                string title = "Error";
                 passwordTB.Text = null;
                 MessageBox.Show(message, title);
 
             }
         }
-
-        
 
         private void newBTN_Click(object sender, EventArgs e)
         {
@@ -69,6 +53,6 @@ namespace PasswordManager
             this.Close();
         }
 
-        
+
     }
 }

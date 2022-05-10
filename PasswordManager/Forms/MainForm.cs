@@ -15,56 +15,64 @@ namespace PasswordManager.Forms
         int korisnikID = 0;
         int bazaID = 0;
 
+        int provjeraPostojanja = 0;
+
         public MainForm()
         {
             InitializeComponent();
 
             PristupBazi db = new PristupBazi();
             mapa = db.IspisPasswords();
+            ljudi = db.IspisUsers();
 
-            if(mapa.Count == 0)
+            provjeraPostojanja = mapa.FindIndex(x => x.KorisnikID == loginForm.UserID);
+
+
+            if (provjeraPostojanja==-1)
             {
                 saveBtn.Enabled = false;
+                user_id = loginForm.UserID;
+                mapa_id = mapa[user_id].BazaID;
+                korisnikToolStripMenuItem.Text = ljudi[user_id].Username;
+
 
             }
             else
             {
-                if (loginForm.UserID != -1)
+                if (loginForm.UserID >= 0)
                 {
                     user_id = loginForm.UserID;
                     mapa_id = mapa[user_id].BazaID;
+                    label10.Text = mapa_id.ToString();
+                    korisnikToolStripMenuItem.Text = ljudi[user_id].Username;
                 }
                 else
                 {
                     user_id = AddEntryForm.user_id;
                     mapa_id = mapa[user_id].BazaID;
+                    label10.Text = mapa_id.ToString();
+                    korisnikToolStripMenuItem.Text = ljudi[user_id].Username;
                 }
-            }
-            
 
-            
+                label9.Text = user_id.ToString();
 
+                mapa.RemoveAll(x => x.KorisnikID != user_id);
+                dataGridView1.DataSource = mapa;
 
-           
-            label7.Text = user_id.ToString();
-            mapa.RemoveAll(x => x.KorisnikID != user_id);
-            dataGridView1.DataSource = mapa;
+                if (user_id != -1)
+                {
 
+                    korisnikToolStripMenuItem.Text = ljudi[user_id].Username;
 
-
-            ljudi = db.IspisUsers();
+                }
 
 
-            if (user_id != -1)
-            {
 
-                korisnikToolStripMenuItem.Text = ljudi[user_id].Username;
-
+                dataGridView1.Columns["BazaID"].Visible = false;
             }
 
 
 
-            dataGridView1.Columns["BazaID"].Visible = false;
 
 
         }
@@ -127,36 +135,36 @@ namespace PasswordManager.Forms
         {
 
 
-            string message = "Krivi email ili lozinka";
-            string title = "Greška";
+            
 
-            if (loginForm.UserID != -1)
+            if (user_id != -1)
             {
-                user_id = loginForm.UserID;
-                mapa_id = mapa[user_id].BazaID;
+                //user_id = loginForm.UserID;
+                //mapa_id = mapa[user_id].BazaID;
+
             }
             else
             {
-                user_id = AddEntryForm.user_id;
-                mapa_id = mapa[user_id].BazaID;
+                //user_id = AddEntryForm.user_id;
+                //mapa_id = mapa[user_id].BazaID;
+
             }
 
 
             PristupBazi db = new PristupBazi();
-            db.promjenaUnos(mapa_id, user_id, titleTB.Text, usernameTB.Text, passwordTB.Text, urlTB.Text, notesRTB.Text);
+            db.promjenaUnos(bazaID, user_id, titleTB.Text, usernameTB.Text, passwordTB.Text, urlTB.Text, notesRTB.Text);
 
             mapa = db.IspisPasswords();
+            mapa.RemoveAll(x => x.KorisnikID != user_id);
             dataGridView1.DataSource = mapa;
 
 
 
 
-            mapa.RemoveAll(x => x.KorisnikID != user_id);
 
-            label7.Text = user_id.ToString();
 
-            dataGridView1.Columns["BazaID"].Visible = false;
-            
+
+
 
             titleTB.ReadOnly = true;
             usernameTB.ReadOnly = true;
