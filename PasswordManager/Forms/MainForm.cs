@@ -25,16 +25,7 @@ namespace PasswordManager.Forms
 
             PristupBazi db = new PristupBazi();
             mapa = db.IspisPasswords();
-            ljudi = db.IspisUsers();
-
-            provjeraPostojanja = mapa.FindIndex(x => x.KorisnikID == loginForm.UserID);
-
-
-            if (provjeraPostojanja == -1)
-            {
-                saveBtn.Enabled = false;
-                
-            }
+            ljudi = db.prijava();            
 
             if (loginForm.UserID != -1)
             {

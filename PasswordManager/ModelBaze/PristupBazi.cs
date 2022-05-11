@@ -1,11 +1,6 @@
 ﻿using Dapper;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PasswordManager.ModelBaze
 {
@@ -33,16 +28,7 @@ namespace PasswordManager.ModelBaze
             }
         }
 
-        public List<Korisnik> IspisUsers()
-        {
-            using (IDbConnection connection = new SqlConnection("Server = 192.168.1.17; Database = BazaPodatakaPasswordManager; User Id = dorian; Password = lozinka;"))
-            {
-
-                var a = connection.Query<Korisnik>("SELECT * FROM BazaPodatakaPasswordManager.dbo.Korisnik").ToList();
-
-                return a;
-            }
-        }
+       
 
         public void promjenaUnos(int BazaID, int KorisnikID,string Title, string Username, string Password, string URL, string Notes)
         {

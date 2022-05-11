@@ -108,7 +108,7 @@
             // 
             // usernameTB
             // 
-            this.usernameTB.Location = new System.Drawing.Point(141, 59);
+            this.usernameTB.Location = new System.Drawing.Point(141, 63);
             this.usernameTB.Name = "usernameTB";
             this.usernameTB.Size = new System.Drawing.Size(246, 23);
             this.usernameTB.TabIndex = 7;
@@ -230,7 +230,7 @@
             this.hexKey40BitToolStripMenuItem2,
             this.randomMACAddressToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(195, 120);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(195, 98);
             // 
             // toolStripSeparator1
             // 

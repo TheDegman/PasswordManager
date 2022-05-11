@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+﻿using System.Data;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Security;
 using System.Security.Cryptography;
 using PasswordManager.ModelBaze;
 
@@ -115,10 +107,7 @@ namespace PasswordManager.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //var relativeMousePosition = passwordsBTN.PointToClient(Cursor.Position);
-
-            //// Show the context menu
-            //this.contextMenuStrip1.Show(passwordsBTN, relativeMousePosition);
+            
             contextMenuStrip1.Show(passwordsBTN, new Point(0,passwordsBTN.Height));
         }
 
