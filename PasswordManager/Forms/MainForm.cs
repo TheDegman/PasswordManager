@@ -34,53 +34,33 @@ namespace PasswordManager.Forms
                 user_id = loginForm.UserID;
                 mapa_id = mapa[user_id].BazaID;
                 korisnikToolStripMenuItem.Text = ljudi[user_id].Username;
-
-
             }
             else
             {
                 if (loginForm.UserID >= 0)
                 {
                     user_id = loginForm.UserID;
-                    mapa_id = mapa[user_id].BazaID;
-                    label10.Text = mapa_id.ToString();
+                    mapa_id = mapa[user_id].BazaID;                    
                     korisnikToolStripMenuItem.Text = ljudi[user_id].Username;
                 }
                 else
                 {
                     user_id = AddEntryForm.user_id;
-                    mapa_id = mapa[user_id].BazaID;
-                    label10.Text = mapa_id.ToString();
+                    mapa_id = mapa[user_id].BazaID;                   
                     korisnikToolStripMenuItem.Text = ljudi[user_id].Username;
-                }
-
-                label9.Text = user_id.ToString();
+                }                
 
                 mapa.RemoveAll(x => x.KorisnikID != user_id);
                 dataGridView1.DataSource = mapa;
 
                 if (user_id != -1)
                 {
-
                     korisnikToolStripMenuItem.Text = ljudi[user_id].Username;
-
                 }
-
-
 
                 dataGridView1.Columns["BazaID"].Visible = false;
             }
-
-
-
-
-
         }
-
-
-
-
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             index = e.RowIndex;
@@ -94,63 +74,36 @@ namespace PasswordManager.Forms
                 label8.Text = mapa[index].DateCreated.ToString();
                 notesRTB.Text = mapa[index].Notes;
                 korisnikID = mapa[index].KorisnikID;
-                bazaID = mapa[index].BazaID;
-                label9.Text=korisnikID.ToString();
-                label10.Text=bazaID.ToString();
+                bazaID = mapa[index].BazaID;                
             }
-
-
         }
 
         private void titleTB_DoubleClick(object sender, EventArgs e)
         {
-            titleTB.ReadOnly = false;
-        }
+            titleTB.ReadOnly = false;        }
 
         private void usernameTB_DoubleClick(object sender, EventArgs e)
         {
             usernameTB.ReadOnly = false;
-
         }
 
         private void passwordTB_DoubleClick(object sender, EventArgs e)
         {
             passwordTB.ReadOnly = false;
-
         }
 
         private void urlTB_DoubleClick(object sender, EventArgs e)
         {
             urlTB.ReadOnly = false;
-
         }
 
         private void notesRTB_DoubleClick(object sender, EventArgs e)
         {
             notesRTB.ReadOnly = false;
-
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
-        {
-
-
-            
-
-            if (user_id != -1)
-            {
-                //user_id = loginForm.UserID;
-                //mapa_id = mapa[user_id].BazaID;
-
-            }
-            else
-            {
-                //user_id = AddEntryForm.user_id;
-                //mapa_id = mapa[user_id].BazaID;
-
-            }
-
-
+        {            
             PristupBazi db = new PristupBazi();
             db.promjenaUnos(bazaID, user_id, titleTB.Text, usernameTB.Text, passwordTB.Text, urlTB.Text, notesRTB.Text);
 
@@ -158,26 +111,12 @@ namespace PasswordManager.Forms
             mapa.RemoveAll(x => x.KorisnikID != user_id);
             dataGridView1.DataSource = mapa;
 
-
-
-
-
-
-
-
-
             titleTB.ReadOnly = true;
             usernameTB.ReadOnly = true;
             passwordTB.ReadOnly = true;
             urlTB.ReadOnly = true;
             notesRTB.ReadOnly = true;
-
-
-
-
         }
-
-
 
         private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -186,22 +125,15 @@ namespace PasswordManager.Forms
                 if (e.Button == MouseButtons.Right)
                 {
                     DataGridViewCell clickedCell = (sender as DataGridView).Rows[e.RowIndex].Cells[e.ColumnIndex];
-
-                    // Here you can do whatever you want with the cell
-                    this.dataGridView1.CurrentCell = clickedCell;  // Select the clicked cell, for instance
-
-                    // Get mouse position relative to the vehicles grid
+                    
+                    this.dataGridView1.CurrentCell = clickedCell;
+                    
                     var relativeMousePosition = dataGridView1.PointToClient(Cursor.Position);
-
-                    // Show the context menu
+                    
                     this.contextMenuStrip1.Show(dataGridView1, relativeMousePosition);
                 }
             }
         }
-
-
-
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -220,10 +152,7 @@ namespace PasswordManager.Forms
             if (usernameTB.Text != "")
             {
                 Clipboard.SetText(usernameTB.Text);
-
             }
-
-
         }
 
         private void copyPasswordToolStripMenuItem_Click(object sender, EventArgs e)
@@ -231,7 +160,6 @@ namespace PasswordManager.Forms
             if (passwordTB.Text != "")
             {
                 Clipboard.SetText(passwordTB.Text);
-
             }
         }
 
@@ -240,14 +168,11 @@ namespace PasswordManager.Forms
             if (urlTB.Text != "")
             {
                 Clipboard.SetText(urlTB.Text);
-
             }
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-
             if (urlTB.Text != "")
             {
                 ProcessStartInfo psInfo = new ProcessStartInfo
@@ -256,18 +181,13 @@ namespace PasswordManager.Forms
                     UseShellExecute = true
                 };
                 Process.Start(psInfo);
-
             }
-
-
         }
-
         private void copyUserNameToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (usernameTB.Text != "")
             {
                 Clipboard.SetText(usernameTB.Text);
-
             }
         }
 
@@ -276,15 +196,19 @@ namespace PasswordManager.Forms
             if (passwordTB.Text != "")
             {
                 Clipboard.SetText(passwordTB.Text);
-
             }
-
         }
-
         private void openToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
-
+            if (urlTB.Text != "")
+            {
+                ProcessStartInfo psInfo = new ProcessStartInfo
+                {
+                    FileName = urlTB.Text,
+                    UseShellExecute = true
+                };
+                Process.Start(psInfo);
+            }
         }
 
         private void copyToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -292,59 +216,31 @@ namespace PasswordManager.Forms
             if (urlTB.Text != "")
             {
                 Clipboard.SetText(urlTB.Text);
-
             }
-
         }
-
         private void addEntryToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.Hide();
             AddEntryForm glavna = new AddEntryForm();
             glavna.ShowDialog();
             this.Close();
-
-
         }
 
         private void deleteEntryToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             PristupBazi db = new PristupBazi();
-            db.deleteMapa(bazaID,korisnikID);
-
-            if (loginForm.UserID != -1)
-            {
-                user_id = loginForm.UserID;
-                mapa_id = mapa[user_id].BazaID;
-            }
-            else
-            {
-                user_id = AddEntryForm.user_id;
-                mapa_id = mapa[user_id].BazaID;
-            }
-
+            db.deleteMapa(bazaID,user_id);
 
             mapa = db.IspisPasswords();
-            dataGridView1.DataSource = mapa;
-
-
             mapa.RemoveAll(x => x.KorisnikID != user_id);
-
-            label7.Text = user_id.ToString();
-
-
-
+            dataGridView1.DataSource = mapa;
         }
-
-
-
         private void addEntryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             AddEntryForm glavna = new AddEntryForm();
             glavna.ShowDialog();
             this.Close();
-
         }
 
 

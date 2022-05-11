@@ -44,10 +44,7 @@
             this.deleteEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.saveBtn = new System.Windows.Forms.Button();
             this.notesRTB = new System.Windows.Forms.RichTextBox();
             this.urlTB = new System.Windows.Forms.TextBox();
@@ -195,10 +192,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.saveBtn);
             this.panel1.Controls.Add(this.notesRTB);
             this.panel1.Controls.Add(this.urlTB);
@@ -218,24 +212,6 @@
             this.panel1.Size = new System.Drawing.Size(1011, 435);
             this.panel1.TabIndex = 1;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(668, 391);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 15);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "label10";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(664, 368);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 15);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "label9";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -244,15 +220,6 @@
             this.label8.Size = new System.Drawing.Size(38, 15);
             this.label8.TabIndex = 16;
             this.label8.Text = "label8";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(804, 358);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 15);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "label7";
             // 
             // saveBtn
             // 
@@ -503,7 +470,6 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private Label label7;
         private Label label8;
         private ToolStripMenuItem entryToolStripMenuItem;
         private ToolStripMenuItem copyUsernameToolStripMenuItem;
@@ -523,7 +489,5 @@
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripMenuItem addEntryToolStripMenuItem1;
         private ToolStripMenuItem deleteEntryToolStripMenuItem1;
-        private Label label10;
-        private Label label9;
     }
 }
