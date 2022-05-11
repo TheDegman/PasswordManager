@@ -33,6 +33,7 @@ namespace PasswordManager
                 MainForm forma = new MainForm();
                 forma.ShowDialog();
                 this.Close();
+                label3.Text=UserID.ToString();
 
             }
             else
@@ -53,6 +54,12 @@ namespace PasswordManager
             this.Close();
         }
 
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm forma = new MainForm();
+            forma.ShowDialog();
+            this.Close();
+        }
     }
 }
