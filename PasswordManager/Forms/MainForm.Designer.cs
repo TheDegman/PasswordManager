@@ -224,7 +224,7 @@
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(766, 360);
+            this.saveBtn.Location = new System.Drawing.Point(765, 360);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(137, 30);
             this.saveBtn.TabIndex = 13;
