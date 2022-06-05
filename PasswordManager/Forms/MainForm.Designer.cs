@@ -45,7 +45,6 @@
             this.deleteEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.saveBtn = new System.Windows.Forms.Button();
             this.notesRTB = new System.Windows.Forms.RichTextBox();
@@ -194,7 +193,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.saveBtn);
             this.panel1.Controls.Add(this.notesRTB);
@@ -214,15 +212,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1011, 435);
             this.panel1.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(687, 361);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 15);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "label7";
             // 
             // label8
             // 
@@ -502,6 +491,5 @@
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripMenuItem addEntryToolStripMenuItem1;
         private ToolStripMenuItem deleteEntryToolStripMenuItem1;
-        private Label label7;
     }
 }

@@ -38,11 +38,9 @@
             this.usernameTB = new System.Windows.Forms.TextBox();
             this.passwordTB1 = new System.Windows.Forms.TextBox();
             this.passwordTB2 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.notesRTB = new System.Windows.Forms.RichTextBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.urlTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.titleTB = new System.Windows.Forms.TextBox();
@@ -61,7 +59,7 @@
             // 
             // okBTN
             // 
-            this.okBTN.Location = new System.Drawing.Point(295, 418);
+            this.okBTN.Location = new System.Drawing.Point(295, 389);
             this.okBTN.Name = "okBTN";
             this.okBTN.Size = new System.Drawing.Size(75, 23);
             this.okBTN.TabIndex = 0;
@@ -71,7 +69,7 @@
             // 
             // cancelBTN
             // 
-            this.cancelBTN.Location = new System.Drawing.Point(376, 418);
+            this.cancelBTN.Location = new System.Drawing.Point(376, 389);
             this.cancelBTN.Name = "cancelBTN";
             this.cancelBTN.Size = new System.Drawing.Size(75, 23);
             this.cancelBTN.TabIndex = 1;
@@ -132,19 +130,10 @@
             this.passwordTB2.TabIndex = 9;
             this.passwordTB2.UseSystemPasswordChar = true;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(28, 178);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 15);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "label5";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 211);
+            this.label6.Location = new System.Drawing.Point(28, 174);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(31, 15);
             this.label6.TabIndex = 11;
@@ -153,7 +142,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 253);
+            this.label7.Location = new System.Drawing.Point(28, 214);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 15);
             this.label7.TabIndex = 12;
@@ -161,22 +150,15 @@
             // 
             // notesRTB
             // 
-            this.notesRTB.Location = new System.Drawing.Point(141, 253);
+            this.notesRTB.Location = new System.Drawing.Point(141, 214);
             this.notesRTB.Name = "notesRTB";
             this.notesRTB.Size = new System.Drawing.Size(246, 137);
             this.notesRTB.TabIndex = 13;
             this.notesRTB.Text = "";
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(141, 170);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(246, 23);
-            this.progressBar1.TabIndex = 14;
-            // 
             // urlTB
             // 
-            this.urlTB.Location = new System.Drawing.Point(141, 203);
+            this.urlTB.Location = new System.Drawing.Point(141, 174);
             this.urlTB.Name = "urlTB";
             this.urlTB.Size = new System.Drawing.Size(246, 23);
             this.urlTB.TabIndex = 15;
@@ -273,16 +255,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 446);
+            this.ClientSize = new System.Drawing.Size(458, 414);
             this.ControlBox = false;
             this.Controls.Add(this.passwordsBTN);
             this.Controls.Add(this.revealBTN);
             this.Controls.Add(this.urlTB);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.notesRTB);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.passwordTB2);
             this.Controls.Add(this.passwordTB1);
             this.Controls.Add(this.usernameTB);
@@ -316,11 +296,9 @@
         private TextBox usernameTB;
         private TextBox passwordTB1;
         private TextBox passwordTB2;
-        private Label label5;
         private Label label6;
         private Label label7;
         private RichTextBox notesRTB;
-        private ProgressBar progressBar1;
         private TextBox urlTB;
         private Label label1;
         private TextBox titleTB;

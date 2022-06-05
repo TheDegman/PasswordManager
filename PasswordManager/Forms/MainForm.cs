@@ -31,7 +31,7 @@ namespace PasswordManager.Forms
             {
                 user_id = loginForm.UserID;
                 user_id1 = mapa.FindIndex(x => x.KorisnikID == user_id);
-                label7.Text = user_id1.ToString();
+                
                 mapa_id = mapa[user_id1].BazaID;
                 korisnikToolStripMenuItem.Text = ljudi[user_id1].Username;
             }
@@ -41,7 +41,7 @@ namespace PasswordManager.Forms
 
                 user_id = AddEntryForm.user_id;
                 user_id1 = mapa.FindIndex(x => x.KorisnikID == user_id);
-                label7.Text = user_id1.ToString();
+               
                 mapa_id = mapa[user_id1].BazaID;
                 korisnikToolStripMenuItem.Text = ljudi[user_id1].Username;
 
