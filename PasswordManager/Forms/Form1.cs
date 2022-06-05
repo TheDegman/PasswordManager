@@ -12,6 +12,7 @@ namespace PasswordManager
         public loginForm()
         {
             InitializeComponent();
+
         }
 
         private void loginBtn_Click(object sender, EventArgs e)
@@ -54,6 +55,18 @@ namespace PasswordManager
             this.Close();
         }
 
-        
+        private void revealBTN_Click(object sender, EventArgs e)
+        {
+            if (passwordTB.UseSystemPasswordChar==true)
+            {
+                passwordTB.UseSystemPasswordChar = false;
+               
+            }
+            else
+            {
+                passwordTB.UseSystemPasswordChar = true;
+                
+            }
+        }
     }
 }

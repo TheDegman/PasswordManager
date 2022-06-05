@@ -216,7 +216,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(737, 146);
+            this.label8.Location = new System.Drawing.Point(748, 176);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(38, 15);
             this.label8.TabIndex = 16;
@@ -224,9 +224,9 @@
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(789, 307);
+            this.saveBtn.Location = new System.Drawing.Point(766, 360);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtn.Size = new System.Drawing.Size(137, 30);
             this.saveBtn.TabIndex = 13;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = true;
@@ -234,7 +234,7 @@
             // 
             // notesRTB
             // 
-            this.notesRTB.Location = new System.Drawing.Point(737, 176);
+            this.notesRTB.Location = new System.Drawing.Point(748, 206);
             this.notesRTB.Name = "notesRTB";
             this.notesRTB.ReadOnly = true;
             this.notesRTB.Size = new System.Drawing.Size(225, 96);
@@ -244,7 +244,7 @@
             // 
             // urlTB
             // 
-            this.urlTB.Location = new System.Drawing.Point(737, 107);
+            this.urlTB.Location = new System.Drawing.Point(748, 142);
             this.urlTB.Name = "urlTB";
             this.urlTB.ReadOnly = true;
             this.urlTB.Size = new System.Drawing.Size(225, 23);
@@ -253,7 +253,7 @@
             // 
             // passwordTB
             // 
-            this.passwordTB.Location = new System.Drawing.Point(737, 72);
+            this.passwordTB.Location = new System.Drawing.Point(748, 112);
             this.passwordTB.Name = "passwordTB";
             this.passwordTB.ReadOnly = true;
             this.passwordTB.Size = new System.Drawing.Size(225, 23);
@@ -262,7 +262,7 @@
             // 
             // usernameTB
             // 
-            this.usernameTB.Location = new System.Drawing.Point(737, 44);
+            this.usernameTB.Location = new System.Drawing.Point(748, 84);
             this.usernameTB.Name = "usernameTB";
             this.usernameTB.ReadOnly = true;
             this.usernameTB.Size = new System.Drawing.Size(225, 23);
@@ -271,7 +271,7 @@
             // 
             // titleTB
             // 
-            this.titleTB.Location = new System.Drawing.Point(737, 10);
+            this.titleTB.Location = new System.Drawing.Point(748, 50);
             this.titleTB.Name = "titleTB";
             this.titleTB.ReadOnly = true;
             this.titleTB.Size = new System.Drawing.Size(225, 23);
@@ -281,56 +281,56 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(650, 179);
+            this.label6.Location = new System.Drawing.Point(661, 209);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 15);
+            this.label6.Size = new System.Drawing.Size(41, 15);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Notes";
+            this.label6.Text = "Notes:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(650, 146);
+            this.label5.Location = new System.Drawing.Point(661, 176);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 15);
+            this.label5.Size = new System.Drawing.Size(78, 15);
             this.label5.TabIndex = 5;
-            this.label5.Text = "Date Created";
+            this.label5.Text = "Date Created:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(650, 115);
+            this.label4.Location = new System.Drawing.Point(661, 145);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 15);
+            this.label4.Size = new System.Drawing.Size(31, 15);
             this.label4.TabIndex = 4;
-            this.label4.Text = "URL";
+            this.label4.Text = "URL:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(650, 80);
+            this.label3.Location = new System.Drawing.Point(661, 115);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 15);
+            this.label3.Size = new System.Drawing.Size(60, 15);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Password";
+            this.label3.Text = "Password:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(647, 52);
+            this.label2.Location = new System.Drawing.Point(661, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 15);
+            this.label2.Size = new System.Drawing.Size(63, 15);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Username";
+            this.label2.Text = "Username:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(650, 18);
+            this.label1.Location = new System.Drawing.Point(661, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 15);
+            this.label1.Size = new System.Drawing.Size(32, 15);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Title";
+            this.label1.Text = "Title:";
             // 
             // dataGridView1
             // 
@@ -431,12 +431,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1011, 459);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Password Manager";
