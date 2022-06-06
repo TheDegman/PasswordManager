@@ -43,7 +43,6 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.addEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.saveBtn = new System.Windows.Forms.Button();
@@ -78,8 +77,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.korisnikToolStripMenuItem,
-            this.entryToolStripMenuItem,
-            this.toolsToolStripMenuItem});
+            this.entryToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -99,14 +97,14 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // lockWorkspaceToolStripMenuItem
             // 
             this.lockWorkspaceToolStripMenuItem.Name = "lockWorkspaceToolStripMenuItem";
-            this.lockWorkspaceToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.lockWorkspaceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.lockWorkspaceToolStripMenuItem.Text = "Lock Workspace";
             this.lockWorkspaceToolStripMenuItem.Click += new System.EventHandler(this.lockWorkspaceToolStripMenuItem_Click);
             // 
@@ -152,7 +150,7 @@
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -161,7 +159,7 @@
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.U)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
@@ -184,12 +182,6 @@
             this.deleteEntryToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
             this.deleteEntryToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.deleteEntryToolStripMenuItem.Text = "Delete Entry";
-            // 
-            // toolsToolStripMenuItem
-            // 
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // panel1
             // 
@@ -459,7 +451,6 @@
         private ToolStripMenuItem korisnikToolStripMenuItem;
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripMenuItem lockWorkspaceToolStripMenuItem;
-        private ToolStripMenuItem toolsToolStripMenuItem;
         private Panel panel1;
         private DataGridView dataGridView1;
         private Label label1;

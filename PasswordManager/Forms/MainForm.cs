@@ -1,5 +1,6 @@
 ﻿using PasswordManager.ModelBaze;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace PasswordManager.Forms
 {
@@ -195,6 +196,7 @@ namespace PasswordManager.Forms
         }
         private void openToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            string url = urlTB.Text;
             if (urlTB.Text != "")
             {
                 ProcessStartInfo psInfo = new ProcessStartInfo
@@ -203,6 +205,7 @@ namespace PasswordManager.Forms
                     UseShellExecute = true
                 };
                 Process.Start(psInfo);
+
             }
         }
 
