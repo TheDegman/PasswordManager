@@ -97,14 +97,14 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // lockWorkspaceToolStripMenuItem
             // 
             this.lockWorkspaceToolStripMenuItem.Name = "lockWorkspaceToolStripMenuItem";
-            this.lockWorkspaceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lockWorkspaceToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.lockWorkspaceToolStripMenuItem.Text = "Lock Workspace";
             this.lockWorkspaceToolStripMenuItem.Click += new System.EventHandler(this.lockWorkspaceToolStripMenuItem_Click);
             // 
@@ -150,7 +150,7 @@
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -159,7 +159,7 @@
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.U)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 

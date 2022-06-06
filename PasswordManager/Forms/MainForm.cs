@@ -173,7 +173,12 @@ namespace PasswordManager.Forms
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (urlTB.Text != "")
+            Uri uriResult;
+            bool result = Uri.TryCreate(urlTB.Text, UriKind.Absolute, out uriResult)
+                && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+
+            string url = urlTB.Text;
+            if (urlTB.Text != "" && result == true)
             {
                 ProcessStartInfo psInfo = new ProcessStartInfo
                 {
@@ -181,6 +186,14 @@ namespace PasswordManager.Forms
                     UseShellExecute = true
                 };
                 Process.Start(psInfo);
+
+            }
+            else
+            {
+                string message = "Invalid URL";
+                string title = "Error";
+                passwordTB.Text = null;
+                MessageBox.Show(message, title);
             }
         }
         private void copyUserNameToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -200,9 +213,12 @@ namespace PasswordManager.Forms
         }
         private void openToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            Uri uriResult;
+            bool result = Uri.TryCreate(urlTB.Text, UriKind.Absolute, out uriResult)
+                && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+            
             string url = urlTB.Text;
-            if (urlTB.Text != "")
+            if (urlTB.Text != "" && result==true)
             {
                 ProcessStartInfo psInfo = new ProcessStartInfo
                 {
@@ -211,6 +227,13 @@ namespace PasswordManager.Forms
                 };
                 Process.Start(psInfo);
 
+            }
+            else
+            {
+                string message = "Invalid URL";
+                string title = "Error";
+                passwordTB.Text = null;
+                MessageBox.Show(message, title);
             }
         }
 
