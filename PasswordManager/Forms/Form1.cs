@@ -23,8 +23,7 @@ namespace PasswordManager
             int resultUsername = ljudi.FindIndex(x => x.Username == usernameTB.Text);
             int resultLozinka = ljudi.FindIndex(x => x.Password == passwordTB.Text);
 
-            label1.Text = resultUsername.ToString();
-            label2.Text = resultLozinka.ToString();
+           
 
 
             if ((resultUsername == resultLozinka && resultUsername >= 0) && (resultLozinka == resultUsername && resultLozinka >= 0))

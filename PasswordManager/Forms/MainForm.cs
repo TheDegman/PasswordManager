@@ -6,8 +6,12 @@ namespace PasswordManager.Forms
 {
     public partial class MainForm : Form
     {
+
+
         List<Mapa> mapa = new List<Mapa>();
         List<Korisnik> ljudi = new List<Korisnik>();
+
+
 
         int index = 0;
         public static int user_id = 0;
@@ -196,6 +200,7 @@ namespace PasswordManager.Forms
         }
         private void openToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+
             string url = urlTB.Text;
             if (urlTB.Text != "")
             {
